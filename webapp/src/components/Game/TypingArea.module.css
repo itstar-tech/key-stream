@@ -1,0 +1,117 @@
+.container {
+    position: relative;
+    min-height: 300px;
+    max-height: 400px;
+    overflow: hidden;
+}
+
+.startMessage,
+.completeMessage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(4px);
+
+    z-index: 10;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.startIcon,
+.completeIcon {
+    font-size: 48px;
+    animation: bounce 1s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.startMessage p,
+.completeMessage p {
+    margin: 0;
+    font-size: var(--font-size-lg);
+    color: var(--text-secondary);
+}
+
+.textContainer {
+    font-family: var(--font-mono), sans-serif;
+    font-size: var(--font-size-2xl);
+    line-height: 2;
+    letter-spacing: 1px;
+
+    padding: var(--spacing-xl);
+    max-height: 400px;
+    overflow-y: auto;
+
+    user-select: none;
+    cursor: text;
+}
+
+.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.character {
+    position: relative;
+    transition: all 0.1s ease-out;
+}
+
+.pending {
+    color: var(--text-muted);
+}
+
+.correct {
+    color: var(--color-success);
+}
+
+.incorrect {
+    color: var(--color-danger);
+    background: rgba(239, 68, 68, 0.2);
+    border-radius: 2px;
+}
+
+.current {
+    color: var(--text-primary);
+    background: var(--color-primary);
+    border-radius: 2px;
+    animation: blink 1s ease-in-out infinite;
+}
+
+@keyframes blink {
+    0%, 50%, 100% {
+        opacity: 1;
+    }
+    25%, 75% {
+        opacity: 0.5;
+    }
+}
+
+.textContainer::-webkit-scrollbar {
+    width: 6px;
+}
+
+.textContainer::-webkit-scrollbar-track {
+    background: var(--bg-tertiary);
+    border-radius: var(--border-radius-md);
+}
+
+.textContainer::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: var(--border-radius-md);
+}

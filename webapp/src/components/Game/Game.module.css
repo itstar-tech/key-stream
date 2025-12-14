@@ -1,0 +1,49 @@
+.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    min-height: 400px;
+    color: var(--text-secondary);
+}
+
+.game {
+    width: 100%;
+    min-height: calc(100vh - 200px);
+}
+
+.gameContent {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: var(--spacing-xl);
+    align-items: start;
+}
+
+.leftPanel {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+.rightPanel {
+    position: sticky;
+    top: calc(var(--spacing-xl) + 80px);
+}
+
+@media (max-width: 1024px) {
+    .gameContent {
+        grid-template-columns: 1fr;
+    }
+
+    .rightPanel {
+        position: static;
+        max-height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .leftPanel {
+        gap: var(--spacing-lg);
+    }
+}

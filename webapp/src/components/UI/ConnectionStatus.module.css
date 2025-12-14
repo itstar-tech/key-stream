@@ -1,0 +1,81 @@
+.container {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius-md);
+
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+}
+
+.indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.label {
+    color: var(--text-secondary);
+}
+
+.connected {
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.connected .indicator {
+    background: var(--color-success);
+    box-shadow: 0 0 8px var(--color-success);
+}
+
+.connected .label {
+    color: var(--color-success);
+}
+
+.connecting {
+    background: rgba(245, 158, 11, 0.1);
+}
+
+.connecting .indicator {
+    background: var(--color-warning);
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+.connecting .label {
+    color: var(--color-warning);
+}
+
+.disconnected {
+    background: rgba(100, 116, 139, 0.1);
+}
+
+.disconnected .indicator {
+    background: var(--text-disabled);
+}
+
+.disconnected .label {
+    color: var(--text-disabled);
+}
+
+.error {
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.error .indicator {
+    background: var(--color-danger);
+    box-shadow: 0 0 8px var(--color-danger);
+}
+
+.error .label {
+    color: var(--color-danger);
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}

@@ -1,0 +1,218 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2xl);
+    padding: var(--spacing-lg);
+}
+
+.header {
+    text-align: center;
+}
+
+.trophy {
+    font-size: 80px;
+    animation: bounce 1s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.title {
+    margin: var(--spacing-md) 0 var(--spacing-sm) 0;
+    font-size: var(--font-size-3xl);
+    background: linear-gradient(
+            135deg,
+            var(--color-primary) 0%,
+            var(--color-secondary) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    margin: 0;
+    font-size: var(--font-size-lg);
+    color: var(--text-secondary);
+}
+
+.podium {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-xl);
+}
+
+.podiumPlace {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    background: var(--bg-tertiary);
+    border-radius: var(--border-radius-lg);
+    border: 2px solid var(--border-color);
+    transition: all var(--transition-normal);
+    min-width: 150px;
+}
+
+.first {
+    transform: scale(1.1);
+    border-color: var(--color-primary);
+    background: linear-gradient(
+            135deg,
+            rgba(99, 102, 241, 0.1) 0%,
+            rgba(236, 72, 153, 0.1) 100%
+    );
+}
+
+.podiumIcon {
+    font-size: 48px;
+}
+
+.podiumAvatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: white;
+}
+
+.podiumInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.podiumName {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.podiumStats {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.allPlayers {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.allPlayers h3 {
+    margin: 0;
+    font-size: var(--font-size-xl);
+    color: var(--text-primary);
+}
+
+.playersList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.playerRow {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: var(--bg-tertiary);
+    border-radius: var(--border-radius-md);
+}
+
+.rank {
+    font-weight: 700;
+    color: var(--text-muted);
+    min-width: 32px;
+}
+
+.miniAvatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-md);
+    font-weight: 700;
+    color: white;
+    flex-shrink: 0;
+}
+
+.playerName {
+    flex: 1;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.playerRowStats {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: var(--font-size-sm);
+    color: var(--text-muted);
+    font-family: var(--font-mono), sans-serif;
+}
+
+.dot {
+    color: var(--border-color);
+}
+
+.playersList::-webkit-scrollbar {
+    width: 6px;
+}
+
+.playersList::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius-md);
+}
+
+.playersList::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: var(--border-radius-md);
+}
+
+@media (max-width: 768px) {
+    .podium {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .first {
+        order: -1;
+    }
+
+    .trophy {
+        font-size: 60px;
+    }
+
+    .title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .playerRowStats {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-xs);
+    }
+
+    .dot {
+        display: none;
+    }
+}
